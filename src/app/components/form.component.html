@@ -4,7 +4,7 @@
         <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Name: </mat-label>
+            <mat-label>Name: </mat-label><br>
             <input matInput formControlName="name" placeholder="Name">
             <mat-hint class="mathint" *ngIf="registrationForm.touched && f.name.errors?.required"> Name is required.</mat-hint>
             <mat-error class="materror" *ngIf="registrationForm.touched && f.name.invalid">Please enter only alphabets</mat-error>
@@ -12,14 +12,14 @@
 
     
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Contact: </mat-label>
+            <mat-label>Contact: </mat-label><br>
             <input matInput placeholder="Contact No." formControlName="contact">
             <mat-hint class="mathint" *ngIf="registrationForm.touched && f.contact.errors?.required">Please input a Contact No.</mat-hint>
             <mat-error class="materror" *ngIf="registrationForm.touched && f.contact.invalid">Please enter a valid Mobile Number</mat-error>
         </mat-form-field><br>
     
         <div class="p">
-            <mat-label>Gender: </mat-label>
+            <mat-label>Gender: </mat-label><br>
             <mat-radio-group name="gender" id="gender" formControlName="gender" fxLayout="row" fxLayoutAlign="end" fxLayoutGap="5vw"> 
                 <mat-radio-button value="Male">Male</mat-radio-button>
                 <mat-radio-button value="Female">Female</mat-radio-button>
@@ -28,21 +28,21 @@
         </div><br>
     
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Email: </mat-label>
+            <mat-label>Email: </mat-label><br>
             <input matInput formControlName="email" placeholder="your email add">
             <mat-hint class="mathint" *ngIf="registrationForm.touched && f.email.errors?.required"> Email is required.</mat-hint>
             <mat-error class="materror" *ngIf="registrationForm.touched && f.email.invalid">Please enter a valid email address</mat-error>
         </mat-form-field><br>
 
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Password: </mat-label>
+            <mat-label>Password: </mat-label><br>
             <input matInput type="password" formControlName="password" placeholder="your password">
             <mat-hint class="mathint" class="mathint" *ngIf="registrationForm.touched && f.password.errors?.required"> Password is required.</mat-hint>
             <mat-error class="materror" *ngIf="registrationForm.touched && f.password.invalid">Please include 8 characters with lower/highercase and digits</mat-error>
         </mat-form-field><br>
 
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Date of Birth: </mat-label>
+            <mat-label>Date of Birth: </mat-label><br>
             <input matInput [matDatepicker]="dob" [max]="yearDate" placeholder="Select from calendar" formControlName="dob" 
             touchUi="true" readonly>
             <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
@@ -52,13 +52,13 @@
         </mat-form-field><br>
 
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Address: </mat-label>
+            <mat-label>Address: </mat-label><br>
             <input matInput formControlName="address" placeholder="your address">
             <mat-hint class="mathint" *ngIf="registrationForm.touched && f.address.errors?.required"> Email is required.</mat-hint>
         </mat-form-field><br>
 
         <mat-form-field appearance="legacy" class="p">
-            <mat-label>Country: </mat-label>
+            <mat-label>Country: </mat-label><br>
             <mat-select formControlName="country">
               <mat-option *ngFor="let country1 of countries" [value]="country1.name">
                 {{country1.name}}

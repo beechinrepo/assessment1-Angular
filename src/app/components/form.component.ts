@@ -25,7 +25,6 @@ export class FormComponent implements OnInit {
 
     this.registrationForm = this.createFormGroup();
 
-
     }
 
   ngOnInit() {
@@ -37,7 +36,7 @@ export class FormComponent implements OnInit {
     }).catch(
         () => { console.log('API Error');}
       ); 
-  }
+    }
 
   // convenience getter for easy access to form fields
   get f() { return this.registrationForm.controls; }
