@@ -20,6 +20,16 @@
         </mat-form-field>
 
         <mat-form-field appearance="legacy" class="p">
+            <mat-label>Date of Birth: </mat-label>
+            <input matInput [matDatepicker]="dob" [max]="yearDate" placeholder="Select from calendar" formControlName="dob" 
+            touchUi="true" readonly>
+            <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
+            <mat-datepicker #dob></mat-datepicker>
+            <mat-hint class="mathint" *ngIf="registrationForm.touched && !!f.dob.errors?.required">Select from calendar</mat-hint>
+            <mat-error class="materror" *ngIf="registrationForm.touched && !!f.dob.invalid">Age must be at least 18</mat-error>
+        </mat-form-field><br>
+
+        <mat-form-field appearance="legacy" class="p">
             <mat-label>Contact: </mat-label>
             <input matInput placeholder="Contact No." formControlName="contact">
             <mat-hint class="mathint" *ngIf="registrationForm.touched && !!f.contact.errors?.required">Please input a Contact No.</mat-hint>
@@ -47,16 +57,6 @@
             <input matInput type="password" formControlName="password" placeholder="your password">
             <mat-hint class="mathint" class="mathint" *ngIf="registrationForm.touched && !!f.password.errors?.required"> Password is required.</mat-hint>
             <mat-error class="materror" *ngIf="registrationForm.touched && !!f.password.invalid">Please include 8 characters with lower/highercase and digits</mat-error>
-        </mat-form-field><br>
-
-        <mat-form-field appearance="legacy" class="p">
-            <mat-label>Date of Birth: </mat-label>
-            <input matInput [matDatepicker]="dob" [max]="yearDate" placeholder="Select from calendar" formControlName="dob" 
-            touchUi="true" readonly>
-            <mat-datepicker-toggle matSuffix [for]="dob"></mat-datepicker-toggle>
-            <mat-datepicker #dob></mat-datepicker>
-            <mat-hint class="mathint" *ngIf="registrationForm.touched && !!f.dob.errors?.required">Select from calendar</mat-hint>
-            <mat-error class="materror" *ngIf="registrationForm.touched && !!f.dob.invalid">Age must be at least 18</mat-error>
         </mat-form-field><br>
 
         <mat-form-field appearance="legacy" class="p">
