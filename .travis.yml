@@ -15,12 +15,12 @@ script:
   # - npm run test-headless
   - ng build --prod --base-href https://carine18.github.io/assessment1/
  
- notifications:  
-  email:  
-    recipients:  
-    - carinengbeechin@gmail.com 
-    on_success: always  
-    on_failure: always
+#  notifications:  
+#   email:  
+#     recipients:  
+#    
+#     on_success: always  
+#     on_failure: always
 
 deploy:
   provider: pages
